@@ -160,7 +160,6 @@ it uses api from caniuse behind the scenes adds rules to support current browser
  
 postcss has a tonne more options / plugins 
  
- 
 ## JS in CSS 
 
 `git checkout css-in-js` (state of end of react, so there's a counter) 
@@ -225,3 +224,36 @@ pretty cool, very semantic source code
 ## typescript 
 
 https://www.udemy.com/webpack-beyond-the-basics/learn/v4/t/lecture/9005820?start=0
+
+## angular
+
+
+## vue 
+
+there is a vue-cli with a boilerplate 
+
+`npm install -S vue-loader vue-template-compiler vue-style-loader`
+
+first module and rules, familar, also need a plugin 
+
+```
+const {VueLoaderPlugin} = require("vue-loader")
+	...
+plugins: [
+	new VueLoaderPlugin()
+
+]
+```
+
+`render: h=>h(App)` -> h is createElement 
+
+if you use a .vue file the vue-loader compiles templates but if you use .js files with templates you need the non-runtime only version of vue, which you can do with an alias 
+
+```
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.esm.js"
+    }
+  },
+```
+
